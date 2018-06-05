@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script type="text/javascript" src="../js/cognito.js"></script>
+    <script type='text/javascript' src="amazon-cognito-identity.js"></script>
+    <script>
+        var data = {
+            UserPoolId: 'us-east-2_Bk7BqXn1v',     // Insert your user pool id
+            ClientId: '3hklqgfcuo243b802sk4fvv9pb' // Insert your app client id
+        };
+        var userPool = new AmazonCognitoIdentity.CognitoUserPool(data);
+    </script>
+    <fieldset>
+        <legend>Cognito Sign Up User Demo</legend>
+        User name: <input type="text" id="username" placeholder="Enter user name...">
+        <br>
+        <br>
+        Password: <input type="text" id="password" placeholder="Enter password...">
+        <br>
+        <br>
+        <div style="width:500px;">
+            <button id="signupUser">Sign Up User</button>
+        </div>
+        <ul id="signupUserResults"></ul>
+    </fieldset>
+    <script>
+        var attributeList = [];
+        document.getElementById('signupUser').addEventListener('click', function () {
+          userPool.signUp(document.getElementById('username').value, document.getElementById('password').value,
+            attributeList, null,
+            function (err, result) {
+                if (err) {
+                    alert(err);
+                    return;
+                }
+                document.getElementById('signupUserResults').innerHTML = "Results: " + JSON.stringify(
+                  result.user, null, 2);
+                cognitoUser = result.user;
+                console.log(cognitoUser);
+            });
+        });
+    </script>
+</body>
+</html>

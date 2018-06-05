@@ -1,0 +1,29 @@
+body {
+    background-color: yellow;
+    margin-bottom: 90px;
+}
+
+.content {
+    margin-top: 70px;
+}
+
+#colFormLabelSm {
+    margin-left: 15px;
+}
+
+.fixed-top {
+    border-bottom: 3px solid grey;
+}
+
+.fixed-bottom {
+    border-top: 3px solid gray;
+}
+
+.navbar-brand {
+    font-family: 'Galada', cursive;
+}
+
+.upload {
+    font-family: 'Galada', cursive;
+}
+
