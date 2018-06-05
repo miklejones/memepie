@@ -37,7 +37,7 @@ function viewAlbum(albumName) {
       '<form id="tag-form">',
       '<br>',
       '<div class="form-group row">',
-      '<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Add Tags:</label>',
+      '<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Add a Category:</label>',
       '<div class="col-xs-4">',
       '<input type="string" class="form-control form-control-sm" id="colFormLabelSm" placeholder="seperate with commas">',
       '</div>',
@@ -61,7 +61,7 @@ function addPhoto(memes) {
     return alert('Please choose a file to upload first.');
   };
   if ($("#colFormLabelSm").val() === "") {
-    return alert('Please add a tag for your meme.')
+    return alert('Please add a one word category.')
   };
   var file = files[0];
   var fileName = file.name;
@@ -80,16 +80,6 @@ function addPhoto(memes) {
     };
     console.log(newMeme);
     console.log("your mom");
-    $.ajax("/api/tagged", {
-      type: "POST",
-      data: newMeme
-    }).then(data =>
-      function () {
-        console.log(`new tags added to database`);
-        location.reload();
-      }
-    );
-
     $.ajax("/api/memes", {
       type: "POST",
       data: newMeme

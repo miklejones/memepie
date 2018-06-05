@@ -17,9 +17,9 @@ router.get('../public/views/upload.html', (req, res) =>{
 router.post("/api/memes", (req, res) => {
     console.log(req.body);
         memes.create([
-        "file_path"
+        "file_path", "category" 
     ], [
-        req.body.file_path
+        req.body.file_path, req.body.tags_id[0]
     ], result => {
         res.json({ meme_id: result.insertId })
     });

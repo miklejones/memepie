@@ -62,7 +62,7 @@ const orm = {
 
 
 
-    findTagged: (tag_id, cb) => {
+  innerJoin: (tag_id, cb) => {
         console.log(`tag_id: ${tag_id}`);
         const queryString =
             `SELECT  memes.file_path, tagged.tag_id FROM memes INNER JOIN tagged ON memes.file_path=tagged.file_path WHERE tag_id = "${tag_id}"`
