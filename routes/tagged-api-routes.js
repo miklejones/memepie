@@ -1,4 +1,4 @@
-var model = require('../models/memes.js');
+var model = require('../models/tagged.js');
 
 module.exports = function (app){
 
@@ -29,7 +29,11 @@ module.exports = function (app){
 
 
     app.post("/api/tagged", function(req, res) {
-        model.Tagged.insertOne(req.body).then(function(modelTagged) {
+        console.log('wowowowowowo');
+        console.log(req.body);
+        
+        
+        model.Tagged.create(req.body).then(function(modelTagged) {
           res.json(modelTagged);
         });
       });

@@ -21,6 +21,10 @@ module.exports = function (app) {
     });
 
     app.post("/api/memes", function(req, res) {
+        console.log('bebebebebebeb');
+        console.log(req.body);
+        
+        
         model.Memes.create(req.body).then(function(modelMemes) {
           res.json(modelMemes);
         });

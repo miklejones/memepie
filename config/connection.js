@@ -1,5 +1,6 @@
 const mysql = require(`mysql`)
 require(`dotenv`).load();
+
 let connection;
 
 if (process.env.JAWSDB_URL) {

@@ -7,7 +7,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const orm = require("./config/orm.js");
-const routes = require("./controller/controller.js")
+const routes = require("./controller/memes_controller.js")
 
 // Sets up the Express App
 // =============================================================

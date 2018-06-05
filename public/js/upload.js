@@ -80,6 +80,16 @@ function addPhoto(memes) {
     };
     console.log(newMeme);
     console.log("your mom");
+    $.ajax("/api/tagged", {
+      type: "POST",
+      data: newMeme
+    }).then(data =>
+      function () {
+        console.log(`new tags added to database`);
+        location.reload();
+      }
+    );
+
     $.ajax("/api/memes", {
       type: "POST",
       data: newMeme
@@ -89,6 +99,7 @@ function addPhoto(memes) {
         location.reload();
       }
     );
+    
   });
 
   s3.upload({

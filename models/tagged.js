@@ -1,13 +1,13 @@
 const orm = require('../config/orm');
 
-const memes = {
+const tagged = {
     all: cb => {
-        orm.selectAll('memes', res => {
+        orm.selectAll('tagged', res => {
             cb(res);
         });
     },
-    create: (cols, vals, cb) => {
-        orm.insertOne('memes', cols, vals, res => {
+    create: (cols1, cols2, vals1, vals2, cb) => {
+        orm.insertTwo('tagged', cols1, cols2, vals1, vals2, res => {
             cb(res);
         });
     },
@@ -20,4 +20,4 @@ const memes = {
     }
 }
 
-module.exports = memes;
+module.exports = tagged;
