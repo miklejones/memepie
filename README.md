@@ -29,3 +29,6 @@ This application is designed for both desktop and mobile use but geared more tow
 * [Fonts](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css)
 * [jQuery script](https://code.jquery.com/jquery.js)
 * [AWS S3](https://aws.amazon.com/s3/?sc_channel=PS&sc_campaign=acquisition_US&sc_publisher=google&sc_medium=s3_b&sc_content=s3_e&sc_detail=aws%20s3&sc_category=s3&sc_segment=192085379926&sc_matchtype=e&sc_country=US&s_kwcid=AL!4422!3!192085379926!e!!g!!aws%20s3&ef_id=WnoXzgAAAIB3y1Ha:20180602140206:s)
+
+
+To view the depolyed application [click here](https://warm-refuge-92623.herokuapp.com/)
